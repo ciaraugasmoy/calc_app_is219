@@ -20,6 +20,7 @@ def generate_test_data(num_records):
         operation_name = fake.random_element(elements=list(operation_mappings.keys()))
         operation_func = operation_mappings[operation_name]
         # Ensure b is not zero for divide operation to prevent division by zero in expected calculation
+        # pylint: disable=comparison-with-callable
         if operation_func == divide:
             b = Decimal('1') if b == Decimal('0') else b
         try:
