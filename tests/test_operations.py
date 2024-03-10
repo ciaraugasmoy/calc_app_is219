@@ -1,9 +1,12 @@
-import pytest
+'''
+Tests for calculation and divide 0
+'''
 from decimal import Decimal
+import pytest
 from calculator.calculation import Calculation
-from calculator.operations import add, subtract, multiply, divide
+from calculator.operations import divide
 
-
+# pylint: disable=invalid-name
 def test_operation(a, b, operation, expected):
     '''Testing various operations'''
     calculation = Calculation.create(a, b, operation)
